@@ -46,7 +46,60 @@ table {
   border-spacing: 0;
 }
 
+h1{
+  text-align:center;
+}
 
+#selection{
+  text-align:center;
+  background-color:orange;
+  width:350px;
+  height:85px;
+  margin:0 auto;
+  border-radius:2px;
+}
+
+#selection h3{
+  padding-top:5px;
+}
+
+#message{
+  text-align:center;
+}
+
+.option{
+  display:inline-block;
+  margin-right:10px;
+  margin-top:20px;
+  height:25px;
+  border-radius:4px;
+  padding:5px;
+  color:white;
+  vertical-align:center;
+  line-height:25px;
+}
+
+#beginner{
+  background-color:blue;
+}
+
+#intermediate{
+  background-color:green;
+}
+
+#expert{
+  background-color:black;
+}
+
+.bg-flag{
+  background-image: url('../images/flag.png');
+  background-size:cover;
+}
+
+.bg-mine{
+  background-image: url('../images/mine.png');
+  background-size:cover;
+}
 
 #board{
 	width:162px;
@@ -58,12 +111,12 @@ table {
 .cell{
 	height:16px;
 	width:16px;
-	border:1px solid black;
+	border:1px solid gray;
 	display:inline-block;
 	font-size:15px;
   overflow:hidden;
   text-align:center;
-  background-color:gray;
+  background-color:#C0C0C0;
 }
 
 
