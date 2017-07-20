@@ -50,13 +50,39 @@ h1{
   text-align:center;
 }
 
+body{
+  font-family: 'Roboto Mono', monospace;
+  position:relative;
+}
+
 #selection{
   text-align:center;
-  background-color:orange;
+  color:white;
+  background-color:#490e15;
   width:350px;
-  height:85px;
+  height:110px;
   margin:0 auto;
-  border-radius:2px;
+  padding:10px;
+  border-radius:5px;
+}
+
+#directions-button{
+  background-color:purple;
+  display:inline;
+  text-align: center;
+  width:100px;
+  border-radius:4px;
+  border:1px solid gray;
+  padding:5px;
+  color:white;
+  vertical-align:center;
+  line-height:25px;
+}
+
+#directions-container{
+  margin:0 auto;
+  width:500px;
+  text-align: center;
 }
 
 #selection h3{
@@ -64,7 +90,7 @@ h1{
 }
 
 #message{
-  text-align:center;
+  line-height:22px;
 }
 
 .option{
@@ -73,6 +99,7 @@ h1{
   margin-top:20px;
   height:25px;
   border-radius:4px;
+  border:1px solid gray;
   padding:5px;
   color:white;
   vertical-align:center;
@@ -84,7 +111,8 @@ h1{
 }
 
 #intermediate{
-  background-color:green;
+  background-color:yellow;
+  color:black;
 }
 
 #expert{
@@ -101,6 +129,17 @@ h1{
   background-size:cover;
 }
 
+#directions{
+  width:500px;
+  margin:0 auto;
+  text-align:left;
+  display:none;
+}
+
+li{
+  padding-bottom:10px;
+}
+
 #board{
 	width:162px;
 	height:162px;
@@ -113,8 +152,10 @@ h1{
 	width:16px;
 	border:1px solid gray;
 	display:inline-block;
-	font-size:15px;
+	font-size:14px;
   overflow:hidden;
+  vertical-align:center;
+  line-height:16px;
   text-align:center;
   background-color:#C0C0C0;
 }

@@ -154,7 +154,9 @@ Board.prototype.uncover = function(location){
 
 Board.prototype.gameOver = function(){
 	this.displayNumbers();
-	$('#message').text('You lost!');
+	$('#selection').css('background-color','red');
+	$('#selection').slideDown();
+	$('#message').text('Dude...you lost!');
 	$('.cell').off('mousedown');
 }
 
@@ -174,7 +176,9 @@ Board.prototype.checkWin = function(){
 
 Board.prototype.youWon = function(){
 	this.displayNumbers();
-	$('#message').text('You won!');
+	$('#selection').css('background-color','green');
+	$('#selection').slideDown();
+	$('#message').text('Dude! You won!');
 	$('.cell').off('mousedown');
 }
 
@@ -199,7 +203,7 @@ restartGame = function(){
 }
 
 Board.prototype.playGame = function(){
-	$('#message').text('Good luck!')
+	$('#selection').slideUp();
 	$('.cell').mousedown(function(event){
 		id = $(this).attr('id');
 		loc = id.substring(1,id.length);
@@ -242,7 +246,9 @@ $(document).ready(function(){
 	});
 	
 
-	
+	$('#directions-button').click(function(){
+		$('#directions').toggle('slow');
+	});
 
 
 	$('.cell').on('selectstart', function (event) {

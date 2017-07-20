@@ -2,16 +2,18 @@
 <html>
 <head>
 	<title>Minesweeper</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 	<link rel = 'stylesheet' type = "text/css" href = 'styles/styles.css' />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type = 'text/javascript' src = 'scripts/main.js'></script>
 </head>
 
 <body>
-	<h1>Minesweeper</h1>
+	<br>
+	<h1>Alex's Minesweeper</h1>
 	<br>
 	<div id = 'selection'>
-		<h3>Choose your difficulty</h3>
+		<h3 id = 'message'>Welcome! <br>Select your desired difficulty:</h3>
 		<div class = 'option' id = 'beginner'>
 			BEGINNER
 		</div>
@@ -27,6 +29,25 @@
 
 	</div>
 	<div id = 'board' oncontextmenu='return false;'>
+	</div>
+	<br>
+	<div id = 'directions-container'>
+		<div id = 'directions-button'>
+			Directions
+		</div>
+		<br>
+		<br>
+		<br>
+		<div id = 'directions'>
+			<ul>
+				<li>(1) Click on any box to get started</li>
+				<li>(2) If you click on a mine...you lose!</li>
+				<li>(3) The numbers in the boxes tell you how many mines are adjacent (are touching) the given box. This counts mines that are diagonal to a given box.</li>
+				<li>(4) You can right click on a box to 'flag' a box. This is useful for keeping track of which boxes you have determined are mines. You only get as many flags as there are mines.</li>
+				<li>(5) Once you have clicked all of the boxes that aren't mines, you win!</li>
+
+			</ul>
+		</div>
 	</div>
 </body>
 
