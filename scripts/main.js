@@ -1,6 +1,7 @@
 var size;
 var number_of_mines;
 
+//Creating the board object
 function Board(board_size, mines){
 	size = board_size;
 	number_of_mines = mines;
@@ -12,6 +13,7 @@ function Board(board_size, mines){
 	this.generateNumbers();
 }
 
+//Creating the cell object
 function Cell (location){
 	this.location = location;
 	this.counter = 0;
@@ -20,6 +22,7 @@ function Cell (location){
 	this.flagged_state = 0;
 }
 
+//Creating cells and markup
 Board.prototype.generateBoard = function(){
 	$('#board').css("width",18*size);
 	$('#board').css("height",18*size);
@@ -35,6 +38,7 @@ Board.prototype.generateBoard = function(){
 	}
 }
 
+//randomly placing mines on the board
 Board.prototype.generateMines = function(){
 	var random_number;
 	var counter = 0;
@@ -53,6 +57,7 @@ Board.prototype.generateMines = function(){
 	}
 }
 
+//figures out how many mines are adjacent to a given cell.
 Board.prototype.generateNumbers = function(){
 	for(i=0;i<number_of_mines;i++){
 		x = this.mine_locations[i][0];
@@ -85,6 +90,7 @@ Board.prototype.generateNumbers = function(){
 	}
 }
 
+//Displays the board once the game has ended
 Board.prototype.displayNumbers = function(){
 	for(i=0;i<this.cells.length;i++){
 		counter = this.cells[i].counter
@@ -103,6 +109,7 @@ Board.prototype.displayNumbers = function(){
 	}
 }
 
+//logic for when a cell is clicked. Recursively runs function if counter is 0.
 Board.prototype.uncover = function(location){
 	cell = this.cells[location];
 	if(cell.flagged_state == 1){
@@ -152,6 +159,7 @@ Board.prototype.uncover = function(location){
 	}
 }
 
+//game over 
 Board.prototype.gameOver = function(){
 	this.displayNumbers();
 	$('#selection').css('background-color','red');
@@ -160,6 +168,7 @@ Board.prototype.gameOver = function(){
 	$('.cell').off('mousedown');
 }
 
+//logic for checking win
 Board.prototype.checkWin = function(){
 	var uncovered_counter = 0;
 	for(i=0;i<this.cells.length;i++){
@@ -174,6 +183,7 @@ Board.prototype.checkWin = function(){
 	}
 }
 
+//Game win 
 Board.prototype.youWon = function(){
 	this.displayNumbers();
 	$('#selection').css('background-color','green');
@@ -182,6 +192,7 @@ Board.prototype.youWon = function(){
 	$('.cell').off('mousedown');
 }
 
+//logic for placing a flag using right click.
 Board.prototype.placeFlag = function(location){
 	cell = this.cells[location];
 
@@ -198,10 +209,12 @@ Board.prototype.placeFlag = function(location){
 	}
 }
 
+//empties dom
 restartGame = function(){
 	$('#board').empty();
 }
 
+//initializes game
 Board.prototype.playGame = function(){
 	$('#selection').slideUp();
 	$('.cell').mousedown(function(event){
@@ -221,6 +234,7 @@ Board.prototype.playGame = function(){
 
 //Helper Functions
 
+//Converts coordinate to an integer.
 integerLocation = function(array_location){
 	return array_location[0]*size+array_location[1];
 }
