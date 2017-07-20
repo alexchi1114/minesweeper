@@ -56,11 +56,11 @@ body{
 }
 
 #selection{
+  overflow:hidden;
   text-align:center;
   color:white;
   background-color:#490e15;
   width:350px;
-  height:110px;
   margin:0 auto;
   padding:10px;
   border-radius:5px;
@@ -143,19 +143,23 @@ li{
 #board{
 	width:162px;
 	height:162px;
-	font-size: 0;
+	font-size:0;
+  overflow:hidden;
 	margin:0 auto;
+  box-sizing:border-box;
 }
 
 .cell{
 	height:16px;
 	width:16px;
+  vertical-align:top;
+  box-sizing:border-box;
 	border:1px solid gray;
 	display:inline-block;
-	font-size:14px;
+	font-size:12px;
   overflow:hidden;
   vertical-align:center;
-  line-height:16px;
+
   text-align:center;
   background-color:#C0C0C0;
 }
